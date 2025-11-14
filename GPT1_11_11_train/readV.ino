@@ -6,7 +6,7 @@ float readBattery() {
 }
 void readV(){
 unsigned long lastVoltageTime = 0;
-const unsigned long voltageInterval = 3000; // 3秒ごと
+const unsigned long voltageInterval = 2000; // 3秒ごと
 
 
 // 電圧を3秒ごとに送信
