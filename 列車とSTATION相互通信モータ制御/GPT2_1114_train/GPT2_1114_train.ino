@@ -1,16 +1,7 @@
 #include <esp_now.h>
 #include <WiFi.h>
+#include "src/constant.h"
 
-// Station（親）の STAモードMACアドレス
-uint8_t stationAddress[] = {0xA0, 0xB7, 0x65, 0x58, 0x7A, 0xFC};
-
-// データ構造体
-typedef struct struct_message {
-  //int command;
-  float voltage;
-} struct_message;
-struct_message sendData;
-//struct_message recvData;
 
 
 // ===== 受信コールバック =====
@@ -40,6 +31,7 @@ void setup() {
   }
 
 void loop() {
+  forward(180);
   readV();
   delay(2000);
 }
