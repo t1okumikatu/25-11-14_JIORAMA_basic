@@ -1,5 +1,6 @@
 void APSTA(){
-WiFi.mode(WIFI_AP_STA);
+WiFi.mode(WIFI_STA);
+  /*
   WiFi.softAP("esp-AP180", "12345678");
   const IPAddress ip(192, 168, 4, 180);
   const IPAddress gateway(192, 168, 4, 1);
@@ -10,4 +11,6 @@ WiFi.mode(WIFI_AP_STA);
   Serial.print("AP SSID: "); Serial.println("esp-AP180");
   Serial.print("STA MAC: "); Serial.println(WiFi.macAddress());
   Serial.print("AP MAC: ");  Serial.println(WiFi.softAPmacAddress());
+  */
+  //WiFi.mode(WIFI_AP_STA);
 }
