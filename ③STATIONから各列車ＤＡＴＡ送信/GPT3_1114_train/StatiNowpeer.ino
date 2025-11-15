@@ -1,10 +1,10 @@
-void nowpeer(){
+void StatiNowpeer(){
 if (esp_now_init() != ESP_OK) {
     Serial.println("ESP-NOW init failed!");
     return;
   }
 
-  //esp_now_register_recv_cb(OnDataRecv);
+  esp_now_register_recv_cb(OnDataRecv);
   esp_now_register_send_cb(OnDataSent);
 
   esp_now_peer_info_t peerInfo = {};

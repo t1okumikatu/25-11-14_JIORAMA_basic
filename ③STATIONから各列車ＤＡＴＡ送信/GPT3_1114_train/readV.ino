@@ -6,7 +6,7 @@ float readBattery() {
 }
 void readV(){
 unsigned long lastVoltageTime = 0;
-const unsigned long voltageInterval = 2000; // 3秒ごと
+const unsigned long voltageInterval = 1000; // 3秒ごと
 
 
 // 電圧を3秒ごとに送信
@@ -15,7 +15,7 @@ const unsigned long voltageInterval = 2000; // 3秒ごと
     sendData.voltage = readBattery();
     esp_err_t result = esp_now_send(stationAddress, (uint8_t *)&sendData, sizeof(sendData));
     if(result==ESP_OK){
-    //Serial.print("[Send Voltage] ");
+    Serial.println("Send Voltage ");
     Serial.println(sendData.voltage, 2);
     //Serial.println(" V");
   } else {
