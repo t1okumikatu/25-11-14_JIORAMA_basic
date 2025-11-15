@@ -10,4 +10,10 @@
     Serial.println("newvoltage  ");
     Serial.println(recvData.voltage, 2);
   }
+    switch (sendData.flag) {
+    case 0: Serial.println("停止"); break;
+    case 1: Serial.println("前進"); break;
+    case 2: Serial.println("後退"); break;
+    default: break;
+  }
   }
