@@ -10,10 +10,31 @@
     Serial.println("newvoltage  ");
     Serial.println(recvData.voltage, 2);
   }
-    switch (sendData.flag) {
-    case 0: Serial.println("停止"); break;
-    case 1: Serial.println("前進"); break;
-    case 2: Serial.println("後退"); break;
-    default: break;
+   // シリアル入力でflagを設定
+    if (Serial.available() > 0) {
+      char input = Serial.read();
+      switch(input) {
+        case '1':
+          sendData.flag = 0;  // 停止
+          Serial.println("STOP");
+          break;
+        case '2':
+          sendData.flag = 1;  // 前進
+          Serial.println("FOWARD");
+          break;
+        case '3':
+          sendData.flag = 2;  // 後退
+          Serial.println("BACK");
+          break;
+        default:
+          Serial.println("無効な入力（0, 1, 2を入力）");
+          break;
+      }
+    }
+    
+    // ESP-NOWでデータ送信
+    esp_err_t result = esp_now_send(trainAddress, (uint8_t *)&sendData, sizeof(sendData));
+    
+    
   }
-  }
+

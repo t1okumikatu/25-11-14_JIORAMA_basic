@@ -7,9 +7,12 @@ void OnDataRecv(const esp_now_recv_info *info, const uint8_t *incomingData, int 
   Serial.println("recv.newvoltage");
   Serial.println(recvData.newvoltage);
   switch (recvData.flag) {
-    case 0: Serial.println("停止"); break;
-    case 1: Serial.println("前進"); break;
-    case 2: Serial.println("後退"); break;
+    case 0: Serial.println("停止");
+    brake(); break;
+    case 1: Serial.println("前進"); 
+    forward(170);break;
+    case 2: Serial.println("後退"); 
+    reverse(150); break;
     default: break;
   }
 }
