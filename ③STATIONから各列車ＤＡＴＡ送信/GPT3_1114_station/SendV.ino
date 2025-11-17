@@ -14,15 +14,15 @@
     if (Serial.available() > 0) {
       char input = Serial.read();
       switch(input) {
-        case '1':
+        case 's':
           sendData.flag = 0;  // 停止
           Serial.println("STOP");
           break;
-        case '2':
+        case 'w':
           sendData.flag = 1;  // 前進
           Serial.println("FOWARD");
           break;
-        case '3':
+        case 'x':
           sendData.flag = 2;  // 後退
           Serial.println("BACK");
           break;
