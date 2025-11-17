@@ -23,5 +23,5 @@ void setup() {
 
 void loop() {
   SendV();
-  delay(2000);
+  delay(100);
 }
