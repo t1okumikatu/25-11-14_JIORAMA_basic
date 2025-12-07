@@ -7,7 +7,9 @@
 //Train>>>Station受信データ（電圧）
 typedef struct struct_message {
   //int command;     // 0=停止, 1=前進, 2=後退など
-  float voltage;   // 電圧（列車からの返信用）
+  //float voltage;   // 電圧（列車からの返信用）
+  float INAvoltage;
+  float INACurrent;
 } struct_message;
 struct_message recvData;
 //// Station→Trainへデータ（電圧＋フラグ）
@@ -22,8 +24,8 @@ struct_return sendData;
 // === 受信コールバック ===incomingDataをrecvDataに
 void OnDataRecv(const esp_now_recv_info *info, const uint8_t *incomingData, int len) {
   memcpy(&recvData, incomingData, sizeof(recvData));
-  //Serial.println("受信電圧Voltage] ");
-  Serial.println(recvData.voltage, 2);
+  Serial.println(recvData.INACurrent, 2);
+  Serial.println(recvData.INAvoltage, 2);
   //Serial.println(" V");
 }
 
