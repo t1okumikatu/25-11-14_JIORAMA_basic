@@ -12,9 +12,9 @@ void OnDataRecv(const esp_now_recv_info *info, const uint8_t *incomingData, int 
     Serial.println(len);
 
     //Serial.println(recvData[0],2); // shunt
-    //Serial.println(recvData[1],2); // bus
+    Serial.print("消費電流: "); // bus
     Serial.println(recvData[2],2); // current
-    //Serial.println(recvData[3],2); // power
+    Serial.print("電圧  　: "); // power
     Serial.println(recvData[4],2); // load
   } else {
     //Serial.println("サイズエラー");
