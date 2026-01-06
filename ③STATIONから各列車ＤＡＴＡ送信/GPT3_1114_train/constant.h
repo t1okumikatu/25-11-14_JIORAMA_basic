@@ -1,8 +1,8 @@
 #ifndef CONSTANT_H
 #define CONSTANT_H
 // Station（親）の STAモードMACアドレス
-uint8_t stationAddress[] = {0xA0, 0xB7, 0x65, 0x58, 0x7A, 0xFC};
-
+uint8_t stationAddress[] = {0x24, 0x6F, 0x28, 0x7A, 0x0A, 0xBC};
+//24:6F:28:7A:0A:BC 治具
 // データ構造体
 typedef struct struct_message {
   //int command;
@@ -20,11 +20,10 @@ typedef struct struct_return {
 struct_return recvData;
 
 
-uint32_t pwm;
 const int VALUE_MAX = 255;      // PWMの最大値
 const int ledPin =6;
-const int in1 = 1;//23
-const int in2 = 2;//22
+const int in1 = 23;//23    //1
+const int in2 = 22;//22    //
 const int freq = 5000; 
 #define resolution 8
 const int ch1 =1;

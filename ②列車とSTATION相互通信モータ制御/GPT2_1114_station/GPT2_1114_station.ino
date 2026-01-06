@@ -1,6 +1,6 @@
 #include <esp_now.h>
 #include <WiFi.h>
-
+//24:6F:28:7A:0A:BC  治具
 // 列車（ESP32-S3）の STAモードMACアドレスを入力
 //uint8_t trainAddress[] = {0x98, 0x3D, 0xAE, 0x60, 0x05, 0x38};
 
