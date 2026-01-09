@@ -1,4 +1,6 @@
 void nowpeer() {
+  esp_wifi_set_channel(6, WIFI_SECOND_CHAN_NONE);
+
   if (esp_now_init() != ESP_OK) {
     Serial.println("ESP-NOW Init Failed");
     return;

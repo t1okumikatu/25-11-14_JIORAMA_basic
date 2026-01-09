@@ -49,7 +49,7 @@ void setup() {
   Serial.begin(115200);
   APSTA();
   // ★ 送信側と同じ ch1 に固定
-  esp_wifi_set_channel(1, WIFI_SECOND_CHAN_NONE);
+  esp_wifi_set_channel(6, WIFI_SECOND_CHAN_NONE);
 
   Serial.print("My MAC: ");
   Serial.println(WiFi.macAddress());
