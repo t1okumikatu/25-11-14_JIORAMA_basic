@@ -10,6 +10,7 @@ const unsigned long voltageInterval = 1000; // 3秒ごと
 
 
 // 電圧を3秒ごとに送信
+/*
   if (millis() - lastVoltageTime > voltageInterval) {
     lastVoltageTime = millis();
     sendData.voltage = readBattery();
@@ -21,5 +22,5 @@ const unsigned long voltageInterval = 1000; // 3秒ごと
   } else {
     Serial.println("送信エラー❣");
   }
-  }
+  }*/
 }

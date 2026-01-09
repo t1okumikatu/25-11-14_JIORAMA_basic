@@ -1,14 +1,8 @@
-/* broadcast_Train Moniter
- * 2021/09/21  Ver1.00 初版
- * 2022/10/26  Ver3.00 モニター強化（パラメーター追加）  
- *             JROBO junichi itoh
- */
-
 #include <esp_now.h>
 #include <WiFi.h>
 #include <esp_wifi.h>
 
-uint8_t recvData[26];
+uint8_t recvData[30];
 void setup() {
   Serial.begin(115200);
   APSTA();

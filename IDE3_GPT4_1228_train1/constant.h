@@ -1,25 +1,6 @@
 #ifndef CONSTANT_H
 #define CONSTANT_H
-// Station（親）の STAモードMACアドレス
-uint8_t stationAddress[] = {0x24, 0x6F, 0x28, 0x7A, 0x0A, 0xBC};
-//24:6F:28:7A:0A:BC 治具
-// データ構造体
-typedef struct struct_message {
-  //int command;
-  float voltage;
-} struct_message;
-struct_message sendData;
-//struct_message recvData;
-
-//// Station→Trainへデータ（電圧＋フラグ）
-typedef struct struct_return {
-  float newvoltage;
-  uint8_t flag;
-  uint16_t Send1;
-} struct_return;
-struct_return Data;
-
-
+uint8_t recvData[30];
 const int VALUE_MAX = 255;      // PWMの最大値
 const int ledPin =6;
 const int in1 = 23;//23    //1
