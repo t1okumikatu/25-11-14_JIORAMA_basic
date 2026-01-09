@@ -21,15 +21,15 @@ void onReceive(const esp_now_recv_info *info,
     Serial.print(",");
   }
   Serial.println();
-
+/*
   Serial.print("送信MAC: ");
   //Serial.print(macStr);
   Serial.print(" | RSSI: ");
   //Serial.print(rssi);
   Serial.println(" dBm");
-
+*/
   // ★ パケットチェック
-  if (len == 26 && Data[0] == 99 && Data[25] == 88) {
+  if (len == 30 && Data[0] == 99 && Data[29] == 88) {
     Send1 = Data[1];
     FB_Light = Data[2];
 
