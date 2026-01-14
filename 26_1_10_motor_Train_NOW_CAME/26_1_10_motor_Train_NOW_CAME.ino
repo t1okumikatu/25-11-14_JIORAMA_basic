@@ -27,6 +27,8 @@ void OnDataRecv(const esp_now_recv_info *info, const uint8_t *incomingData, int 
     reverse(150); break;
     default: break;
   }
+  Serial.print("recv.Send1= ");
+  Serial.println(recvData.Send1);
 }
 // ===== 送信完了コールバック =====
 void OnDataSent(const wifi_tx_info_t *info, esp_now_send_status_t status) {
