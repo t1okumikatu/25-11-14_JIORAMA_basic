@@ -4,21 +4,6 @@
 void onReceive(const esp_now_recv_info *info,
                const uint8_t *data,
                int len) {
-//ESP-NOWでデータを受信した瞬間に自動で呼ばれる関数です
-//（自分で呼ぶ関数ではありません）
-
-  Serial.print("From MAC: ");
-  for (int i = 0; i < 6; i++) {
-    Serial.printf("%02X", info->src_addr[i]);
-    if (i < 5) Serial.print(":");
-  }
-  
-  Serial.print("  RSSI: ");
-  Serial.print(info->rx_ctrl->rssi);
-  Serial.print(" dBm");
-
-  Serial.print("  Length: ");
-  Serial.println(len);
 
   // サイズチェック
   if (len == sizeof(recvData)) {
@@ -35,23 +20,14 @@ void onReceive(const esp_now_recv_info *info,
   Serial.println("-------------------------");
   }
   // ★ パケットチェック
-  uint8_t Send1=0;
-  uint8_t Send2=0;
-  uint8_t Send3=0;
-  uint8_t Send4=0;
-  uint8_t IN_18_PE1;
-  uint8_t OUT_19_PE3;
+  uint8_t Send1 = recvData[1];
   if (len == 30 && recvData[0] == 99 && recvData[29] == 88) {
     Send1 = recvData[1];
-    Send2 = recvData[3];
-    Send3 = recvData[5];
-    Send4 = recvData[7];
-    IN_18_PE1 = recvData[13];
-    OUT_19_PE3 = recvData[14];
   }
-
+    forward(Send1);
     Serial.println("✔ 正常パケット受信");
-  
+    Serial.print("setupSend1  ");
+  Serial.println(Send1);
 }
 
    
